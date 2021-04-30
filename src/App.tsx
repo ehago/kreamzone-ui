@@ -1,12 +1,17 @@
 import React from 'react';
-import GlobalStyle from '@libs/styles/global';
+import { BrowserRouter, Route } from 'react-router-dom';
+import LandingPage from '@pages/LandingPage';
+import AppTemplate from '@templates/AppTemplate';
+import LoginPage from '@pages/LoginPage';
 
 function App() {
   return (
-    <>
-      <div>App</div>
-      <GlobalStyle />
-    </>
+    <AppTemplate>
+      <BrowserRouter>
+        <Route path="/" component={LandingPage} exact />
+        <Route path="/login" component={LoginPage} exact />
+      </BrowserRouter>
+    </AppTemplate>
   );
 }
 

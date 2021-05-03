@@ -128,6 +128,10 @@ const CustomerService = styled.div`
       line-height: 32px;
       padding: 0 14px;
       cursor: pointer;
+      &:active {
+        background-color: rgba(34, 34, 34, 0.8);
+        color: hsla(0, 0%, 100%, 0.8);
+      }
     }
   }
 `;

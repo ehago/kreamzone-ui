@@ -5,11 +5,12 @@ export type AppIconType = keyof typeof AppIcons;
 export interface IAppIconProps {
   type: AppIconType;
   style?: React.CSSProperties;
+  className?: string;
   onClick?: () => void;
 }
 
-function AppIcon({ type, style, onClick }: IAppIconProps) {
-  return React.createElement(AppIcons[type], { style, onClick });
+function AppIcon({ type, style, className, onClick }: IAppIconProps) {
+  return React.createElement(AppIcons[type], { style, className, onClick });
 }
 
 export default AppIcon;

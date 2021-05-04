@@ -1,8 +1,11 @@
+import useStore from '@hooks/useStore';
 import styled from 'styled-components';
 
 interface IProps {}
 
 function GuideBanner({}: IProps) {
+  const { ModalStore } = useStore();
+
   return (
     <StyledGuideBanner>
       <div className="service-guide-banner">
@@ -16,7 +19,10 @@ function GuideBanner({}: IProps) {
           <span>서비스 안내</span>
         </div>
       </div>
-      <div className="download-app-banner">
+      <div
+        className="download-app-banner"
+        onClick={() => ModalStore.openModal('appDownloadGuide')} //
+      >
         <div className="inner-wrapper">
           <strong>DOWNLOAD THE APP</strong>
           <p>

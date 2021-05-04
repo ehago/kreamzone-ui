@@ -5,6 +5,7 @@ import LoginPage from '@pages/LoginPage';
 import ErrorPage from '@pages/ErrorPage';
 import GlobalStyle from '@libs/styles/global';
 import ScrollToTop from '@components/ScrollToTop';
+import ModalContainer from '@components/ModalContainer';
 
 function App() {
   const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ function App() {
           <Route component={ErrorPage} exact />
         </Switch>
       </BrowserRouter>
+      <ModalContainer />
     </QueryClientProvider>
   );
 }

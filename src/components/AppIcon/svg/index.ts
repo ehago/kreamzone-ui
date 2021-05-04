@@ -4,5 +4,6 @@ import { ReactComponent as instagram } from './instagram.svg';
 import { ReactComponent as facebook } from './facebook.svg';
 import { ReactComponent as channel } from './channel.svg';
 import { ReactComponent as naver } from './naver.svg';
+import { ReactComponent as close } from './close.svg';
 
-export { logo, search, instagram, facebook, channel, naver };
+export { logo, search, instagram, facebook, channel, naver, close };

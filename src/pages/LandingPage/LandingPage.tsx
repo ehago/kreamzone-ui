@@ -3,12 +3,14 @@ import Footer from '@components/Footer';
 import GuideBanner from '@components/GuideBanner';
 import Header from '@components/Header';
 import LandingProducts from '@components/LandingProducts';
+import NoticeBar from '@components/NoticeBar';
 import BasicTemplate from '@templates/BasicTemplate';
 
 function LandingPage() {
   return (
     <BasicTemplate
       Header={<Header />}
+      NoticeBar={<NoticeBar />}
       Content={
         <>
           <Banner />

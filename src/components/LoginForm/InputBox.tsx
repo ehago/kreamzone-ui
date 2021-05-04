@@ -13,7 +13,11 @@ function InputBox({ label, type, placeholder, errorMessage, error }: IProps) {
     <StyledInputBox>
       <Label error={error}>{label}</Label>
       <div className="input-wrapper">
-        <Input type={type} placeholder={placeholder} error={error} />
+        <Input
+          type={type}
+          error={error}
+          placeholder={placeholder} //
+        />
       </div>
       <ErrorMessage error={error}>{errorMessage}</ErrorMessage>
     </StyledInputBox>

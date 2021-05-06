@@ -1,10 +1,5 @@
 import { useQuery } from 'react-query';
-import { getNoti } from '@libs/apis/common';
-
-export interface INoti {
-  id: number;
-  noti: string;
-}
+import { getNoti, INoti } from '@libs/apis/common';
 
 function useNoti() {
   const query = useQuery<INoti[]>('NOTI', getNoti);

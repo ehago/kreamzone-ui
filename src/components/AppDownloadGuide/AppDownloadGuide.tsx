@@ -8,6 +8,7 @@ interface IProps {
   ModalStore: IModalStore;
 }
 
+// TODO: 휴대폰번호 입력 부분 마크업 및 스타일링 보완
 function AppDownloadGuide({}: IProps) {
   const ref = useRef<HTMLDivElement | null>(null);
 

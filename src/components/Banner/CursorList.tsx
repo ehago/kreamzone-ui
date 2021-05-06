@@ -40,6 +40,7 @@ const StyledCursorList = styled.ul<{
   right: 0;
   display: flex;
   justify-content: center;
+  z-index: 2;
 
   li {
     margin-right: 12px;

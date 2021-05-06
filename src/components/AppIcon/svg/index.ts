@@ -5,5 +5,17 @@ import { ReactComponent as facebook } from './facebook.svg';
 import { ReactComponent as channel } from './channel.svg';
 import { ReactComponent as naver } from './naver.svg';
 import { ReactComponent as close } from './close.svg';
+import { ReactComponent as leftChevron } from './left-chevron.svg';
+import { ReactComponent as rightChevron } from './right-chevron.svg';
 
-export { logo, search, instagram, facebook, channel, naver, close };
+export {
+  logo,
+  search,
+  instagram,
+  facebook,
+  channel,
+  naver,
+  close,
+  leftChevron,
+  rightChevron,
+};

@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    overflow-anchor: none;  // 더보기 버튼 클릭시 스크롤 이슈 해결해주는 속성
   }
 
   ol, ul, li {

@@ -71,7 +71,7 @@ function Banner({}: IProps) {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [cursor]);
 
   return (
     <StyledBanner background={banners[cursor].backgroundColor}>

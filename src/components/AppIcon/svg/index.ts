@@ -7,6 +7,7 @@ import { ReactComponent as naver } from './naver.svg';
 import { ReactComponent as close } from './close.svg';
 import { ReactComponent as leftChevron } from './left-chevron.svg';
 import { ReactComponent as rightChevron } from './right-chevron.svg';
+import { ReactComponent as favorite } from './favorite.svg';
 
 export {
   logo,
@@ -18,4 +19,5 @@ export {
   close,
   leftChevron,
   rightChevron,
+  favorite,
 };

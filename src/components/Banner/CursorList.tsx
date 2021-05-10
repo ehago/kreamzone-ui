@@ -35,7 +35,7 @@ const StyledCursorList = styled.ul<{
   activeCursorColor: string;
 }>`
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 0;
   right: 0;
   display: flex;

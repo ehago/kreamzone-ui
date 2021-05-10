@@ -18,7 +18,8 @@ function LandingProducts({
       <div className="inner-wrapper">
         <p className="title">{title}</p>
         <p className="sub-title">{subTitle}</p>
-
+      </div>
+      <div className="product-list-wrapper">
         <ul className="product-list">
           {
             Array.from({ length: 4 }, (_, i) => (
@@ -55,6 +56,9 @@ const StyledLandingProducts = styled.div`
   }
 
   .product-list-wrapper {
+    max-width: 1280px;
+    margin: 0 auto 60px;
+    overflow-anchor: none;
   }
   .product-list {
     overflow: hidden;
@@ -84,6 +88,11 @@ const StyledLandingProducts = styled.div`
       vertical-align: middle;
       text-align: center;
       background-color: #fff;
+      transition: 0.2s all ease-out;
+
+      &:hover {
+        background: #f9f9f9;
+      }
     }
   }
 `;

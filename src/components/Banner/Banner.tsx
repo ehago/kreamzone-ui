@@ -63,11 +63,11 @@ function Banner({}: IProps) {
     setCursor(cursor);
   }, []);
 
-  // 4초에 한 번씩 배너이미지 변경
+  // 5초에 한 번씩 배너이미지 변경
   useEffect(() => {
     const interval = setInterval(() => {
       setCursor((cursor) => (cursor + 1) % banners.length);
-    }, 4000);
+    }, 5000);
     return () => {
       clearInterval(interval);
     };
@@ -138,7 +138,8 @@ const StyledBanner = styled.div<{ background: string }>`
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 40vw;
+        width: 25vw;
+        min-width: 350px;
         transition: 0.6s opacity linear;
         opacity: 0;
         cursor: pointer;

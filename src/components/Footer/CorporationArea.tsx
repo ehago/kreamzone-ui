@@ -11,9 +11,9 @@ function CorporationArea({}: IProps) {
         <li>이용약관</li>
       </ul>
       <div className="sns-box">
-        <AppIcon type="instagram" />
-        <AppIcon type="facebook" onClick={() => alert('hi')} />
-        <AppIcon type="channel" />
+        <AppIcon type="instagram" onClick={() => alert('준비중입니다.')} />
+        <AppIcon type="facebook" onClick={() => alert('준비중입니다.')} />
+        <AppIcon type="channel" onClick={() => alert('준비중입니다.')} />
       </div>
       <div className="business-info">
         <div className="info-list">

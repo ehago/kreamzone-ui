@@ -78,13 +78,13 @@ function Banner({}: IProps) {
       <div className="banner-image-list-wrapper">
         <div className="banner-image-list">
           {
-            Array.from({ length: banners.length }, (_, i) => (
+            banners.map((banner, i) => (
               <img
                 key={i}
                 className={cn('banner-image', { active: cursor === i })}
-                src={banners[i].image}
+                src={banner.image}
                 alt="배너 이미지"
-                onClick={() => history.push(banners[i].to)}
+                onClick={() => history.push(banner.to)}
               />
             )) //
           }
@@ -126,13 +126,13 @@ const StyledBanner = styled.div<{ background: string }>`
     position: relative;
     width: 100%;
     height: 100%;
-    /* max-height: 480px; */
+    max-height: 480px;
     background: ${(props) => props.background};
     transition: 0.6s background linear;
     .banner-image-list {
       position: relative;
       height: 100%;
-      /* max-height: 480px; */
+      max-height: 480px;
       .banner-image {
         position: absolute;
         top: 50%;

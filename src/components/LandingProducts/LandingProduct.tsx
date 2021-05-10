@@ -1,32 +1,28 @@
+import { enterWithOpacity } from '@libs/styles/animation';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import FavoriteButton from './FavoriteButton';
+import { IProduct } from './__data__/products';
 
-interface IProps {}
+interface IProps {
+  product: IProduct;
+}
 
-function LandingProduct({}: IProps) {
+function LandingProduct({ product }: IProps) {
   return (
     <StyledLandingProduct>
       <Link to="/product/3241">
         <div className="inside">
-          <img
-            src="https://kream-phinf.pstatic.net/MjAyMTA1MDNfMTg0/MDAxNjIwMDA1NDcxODI5.mFZLfuGohoVd0MWtKua63fwVT0fnZi7J9Rt39nrPU_0g.v0qSfdBrfvbbwuX7_jrOh3bWXCQZwkwFuAQ8Wi1gST0g.PNG/p_1c33a686add345a589f7b089e1fcac23.png?type=m"
-            alt="아디다스 이지 500 인플레임"
-            className="product_img"
-          />
+          <img src={product.productImage} alt={product.desc} />
         </div>
         <div className="info-box">
           <div className="brand">
-            <img
-              src="https://kream-phinf.pstatic.net/MjAyMTAzMTJfMTM5/MDAxNjE1NTE4MjM2NzA5.zSACpHizj3F43ShNk2jRb5T-heUgCIE-jRlqa2vIf7gg.NW_igMJbRCQK0-FSC20_98iw6o8-g0myWOT57hHm-Hgg.PNG/p_daf0e110ace349afb7b14b48faef2c9f.png"
-              alt="Nike"
-              className="brand-nike"
-            />
+            <img src={product.brandImage} alt={product.brand} />
           </div>
-          <div className="name">Adidas Yeezy 500 Enflame</div>
+          <div className="name">{product.name}</div>
           <div className="price">
             <div className="amount">
-              <em>250,000</em>
+              <em>{product.price}</em>
               <div className="won">원</div>
             </div>
             <div className="desc">
@@ -46,7 +42,7 @@ const StyledLandingProduct = styled.li`
   margin: 20px 0;
   padding: 0 12px;
   width: 25%;
-  transition: all 0.4s ease-in-out;
+  animation: ${enterWithOpacity} 0.4s ease-in-out;
   a {
     display: block;
     background-color: #fff;

@@ -1,7 +1,8 @@
+import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import LandingProduct from './LandingProduct';
 import RepresentationProduct from './RepresentationProduct';
-
+import products from './__data__/products';
 interface IProps {
   title: string;
   subTitle: string;
@@ -13,6 +14,17 @@ function LandingProducts({
   subTitle,
   noRepresentation = false,
 }: IProps) {
+  const [viewLimit, setViewLimit] = useState(4); // 최초에는 최대 4개의 제품만 보여줌
+
+  const onMore = () => {
+    setViewLimit((viewLimit) => viewLimit + 4);
+  };
+
+  const visibleProducts = useMemo(() => products.slice(0, viewLimit), [
+    viewLimit,
+  ]);
+  const isMore = visibleProducts.length < products.length;
+
   return (
     <StyledLandingProducts>
       <div className="inner-wrapper">
@@ -22,14 +34,18 @@ function LandingProducts({
       <div className="product-list-wrapper">
         <ul className="product-list">
           {
-            Array.from({ length: 4 }, (_, i) => (
-              <LandingProduct key={i} />
+            visibleProducts.map((product) => (
+              <LandingProduct key={product.id} product={product} />
             )) //
           }
         </ul>
-        <div className="more-button-wrapper">
-          <button>더보기</button>
-        </div>
+        {
+          isMore && (
+            <div className="more-button-wrapper">
+              <button onClick={onMore}>더보기</button>
+            </div>
+          ) //
+        }
       </div>
       {!noRepresentation && <RepresentationProduct />}
     </StyledLandingProducts>

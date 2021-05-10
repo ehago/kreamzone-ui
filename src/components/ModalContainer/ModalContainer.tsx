@@ -1,4 +1,5 @@
 import AppDownloadGuide from '@components/AppDownloadGuide';
+import FavoriteSelector from '@components/FavoriteSelector';
 import useStore from '@hooks/useStore';
 import { useObserver } from 'mobx-react';
 import { createPortal } from 'react-dom';
@@ -10,11 +11,12 @@ const modalRoot = document.querySelector('#modal') as HTMLElement;
 function ModalContainer({}: IProps) {
   const { ModalStore } = useStore();
 
-  const { appDownloadGuide } = ModalStore;
+  const { appDownloadGuide, favoriteSelector } = ModalStore;
 
   const modals = useObserver(() => (
     <>
       {appDownloadGuide.visible && <AppDownloadGuide ModalStore={ModalStore} />}
+      {favoriteSelector.visible && <FavoriteSelector ModalStore={ModalStore} />}
       {/* {other modals..} */}
     </>
   ));

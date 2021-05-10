@@ -1,6 +1,7 @@
 import AppIcon from '@components/AppIcon';
 import useOutSideClick from '@hooks/useOutSideClick';
-import { IModalStore, ModalStore } from '@store/modal';
+import { IModalStore } from '@store/modal';
+import BasicModalTemplate from '@templates/BasicModalTemplate';
 import { useCallback, useRef } from 'react';
 import styled from 'styled-components';
 
@@ -9,7 +10,7 @@ interface IProps {
 }
 
 // TODO: 휴대폰번호 입력 부분 마크업 및 스타일링 보완
-function AppDownloadGuide({}: IProps) {
+function AppDownloadGuide({ ModalStore }: IProps) {
   const ref = useRef<HTMLDivElement | null>(null);
 
   const onClose = useCallback(() => {
@@ -19,7 +20,7 @@ function AppDownloadGuide({}: IProps) {
   useOutSideClick(ref, onClose);
 
   return (
-    <Positioner>
+    <BasicModalTemplate width="424px">
       <StyledAppDownloadGuide ref={ref}>
         <div className="top">
           <p>앱 설치하여 사용해주세요!</p>
@@ -42,31 +43,11 @@ function AppDownloadGuide({}: IProps) {
           <AppIcon type="close" />
         </button>
       </StyledAppDownloadGuide>
-    </Positioner>
+    </BasicModalTemplate>
   );
 }
 
-const Positioner = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(34, 34, 34, 0.5);
-  z-index: 1010;
-`;
-
 const StyledAppDownloadGuide = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  width: 424px;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 10%);
-
   .top {
     padding: 40px 32px 0;
     background-color: #fff;

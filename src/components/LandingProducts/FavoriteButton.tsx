@@ -2,7 +2,7 @@ import AppIcon from '@components/AppIcon';
 import styled from 'styled-components';
 import cn from 'classnames';
 import { useState } from 'react';
-import useStore from '@hooks/useStore';
+import useModal from '@hooks/useModal';
 
 interface IProps {
   on: boolean;
@@ -11,10 +11,10 @@ interface IProps {
 function FavoriteButton({ on }: IProps) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_on, setOn] = useState(on);
-  const { ModalStore } = useStore();
+  const { openModal } = useModal();
 
   const onClick = () => {
-    ModalStore.openModal('favoriteSelector');
+    openModal('favoriteSelector');
   };
 
   return (

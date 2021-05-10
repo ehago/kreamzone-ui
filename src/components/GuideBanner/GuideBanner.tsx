@@ -1,10 +1,10 @@
-import useStore from '@hooks/useStore';
+import useModal from '@hooks/useModal';
 import styled from 'styled-components';
 
 interface IProps {}
 
 function GuideBanner({}: IProps) {
-  const { ModalStore } = useStore();
+  const { openModal } = useModal();
 
   return (
     <StyledGuideBanner>
@@ -21,7 +21,7 @@ function GuideBanner({}: IProps) {
       </div>
       <div
         className="download-app-banner"
-        onClick={() => ModalStore.openModal('appDownloadGuide')} //
+        onClick={() => openModal('appDownloadGuide')} //
       >
         <div className="inner-wrapper">
           <strong>DOWNLOAD THE APP</strong>

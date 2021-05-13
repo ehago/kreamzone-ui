@@ -1,34 +1,43 @@
+import BasicModal from '@components/BasicModal';
+import useModal from '@hooks/useModal';
 import useOutSideClick from '@hooks/useOutSideClick';
-import { IModalStore } from '@store/modal';
-import BasicModalTemplate from '@templates/BasicModalTemplate';
+import {
+  enterWithFadeInBottom,
+  exitWithFadeOutBottom,
+} from '@libs/styles/animation';
 import { useCallback, useRef } from 'react';
 import styled from 'styled-components';
 
-interface IProps {
-  ModalStore: IModalStore;
-}
+interface IProps {}
 
-function FavoriteSelector({ ModalStore }: IProps) {
-  const ref = useRef(null);
+function FavoriteSelector({}: IProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const { closeModalWithDelay } = useModal();
 
   const onClose = useCallback(() => {
-    ModalStore.closeModal('favoriteSelector');
+    closeModalWithDelay('favoriteSelector', ref, 350);
   }, []);
 
   useOutSideClick(ref, onClose);
 
   return (
-    <BasicModalTemplate width="440px">
+    <BasicModal>
       <StyledFavoriteSelector ref={ref}>
         <div className="header">
           <h2>관심 상품 추가</h2>
         </div>
       </StyledFavoriteSelector>
-    </BasicModalTemplate>
+    </BasicModal>
   );
 }
 
 const StyledFavoriteSelector = styled.div`
+  width: 440px;
+  animation: ${enterWithFadeInBottom} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  &.exit {
+    animation: ${exitWithFadeOutBottom} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+
   .header > h2 {
     padding: 18px 50px 0;
     min-height: 60px;

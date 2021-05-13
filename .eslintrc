@@ -26,7 +26,7 @@
         "@typescript-eslint/no-explicit-any": "off", // 
         "@typescript-eslint/explicit-module-boundary-types": "off", // 컴포넌트 반환타입 지정안해도 되게 허용
         "@typescript-eslint/no-empty-interface": "off", // 빈 인터페이스 허용
-        "react/react-in-jsx-scope": "off", // React scope 무시=
+        "react/react-in-jsx-scope": "off", // React scope 무시
         "no-empty-pattern": "off",  // 빈 오브젝트 허용
         "prettier/prettier": "off"  // prettier 린트 무시
     },

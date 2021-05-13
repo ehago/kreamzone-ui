@@ -15,8 +15,8 @@ function ModalContainer({}: IProps) {
 
   const modals = useObserver(() => (
     <>
-      {appDownloadGuide.visible && <AppDownloadGuide ModalStore={ModalStore} />}
-      {favoriteSelector.visible && <FavoriteSelector ModalStore={ModalStore} />}
+      {appDownloadGuide.visible && <AppDownloadGuide />}
+      {favoriteSelector.visible && <FavoriteSelector />}
       {/* {other modals..} */}
     </>
   ));

@@ -1,15 +1,21 @@
+import { useState } from 'react';
 import styled from 'styled-components';
+import FullSearchBox from './FullSearchBox';
 import SearchIcon from './SearchIcon';
 
 interface IProps {}
 
 function SearchBox({}: IProps) {
+  const [fullMode, setFullMode] = useState(false);
+
   return (
-    <StyledSearchBox>
-      <SearchIcon />
-      <input placeholder="브랜드명, 모델명, 모델번호 등"></input>
-      <button></button>
-    </StyledSearchBox>
+    <>
+      <StyledSearchBox>
+        <SearchIcon />
+        <input type="text" readOnly onClick={() => setFullMode(true)}></input>
+      </StyledSearchBox>
+      {fullMode && <FullSearchBox onClose={() => setFullMode(false)} />}
+    </>
   );
 }
 
@@ -41,23 +47,6 @@ const StyledSearchBox = styled.div`
     border-radius: 0;
     -webkit-appearance: none;
     background-color: rgba(0, 0, 0, 0);
-    &::placeholder {
-      visibility: hidden;
-    }
-    &:focus {
-      &::placeholder {
-        visibility: visible;
-      }
-    }
-  }
-
-  button {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 24px;
-    height: 24px;
-    display: none;
   }
 `;
 

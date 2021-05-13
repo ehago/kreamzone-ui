@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 interface IProps {}
 
-function RepresentationProduct({}: IProps) {
+function RepresentationImage({}: IProps) {
   return (
-    <StyledRepresentationProduct>
+    <StyledRepresentationImage>
       <Link to="/product/150023">
         <div className="banner">
           <div className="banner-item">
@@ -20,11 +20,11 @@ function RepresentationProduct({}: IProps) {
           </div>
         </div>
       </Link>
-    </StyledRepresentationProduct>
+    </StyledRepresentationImage>
   );
 }
 
-const StyledRepresentationProduct = styled.div`
+const StyledRepresentationImage = styled.div`
   overflow: hidden;
   vertical-align: top;
   cursor: pointer;
@@ -64,4 +64,4 @@ const StyledRepresentationProduct = styled.div`
   }
 `;
 
-export default RepresentationProduct;
+export default RepresentationImage;

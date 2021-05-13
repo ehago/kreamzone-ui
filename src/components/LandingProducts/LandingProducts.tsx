@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import LandingProduct from './LandingProduct';
-import RepresentationProduct from './RepresentationProduct';
+import RepresentationImage from './RepresentationImage';
 import products from './__data__/products';
 interface IProps {
   title: string;
@@ -47,7 +47,7 @@ function LandingProducts({
           ) //
         }
       </div>
-      {!noRepresentation && <RepresentationProduct />}
+      {!noRepresentation && <RepresentationImage />}
     </StyledLandingProducts>
   );
 }

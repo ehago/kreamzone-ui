@@ -28,7 +28,9 @@
         "@typescript-eslint/no-empty-interface": "off", // 빈 인터페이스 허용
         "react/react-in-jsx-scope": "off", // React scope 무시
         "no-empty-pattern": "off",  // 빈 오브젝트 허용
-        "prettier/prettier": "off"  // prettier 린트 무시
+        "prettier/prettier": "off",  // prettier 린트 무시
+        "no-debugger": "off",
+        "prefer-const": "off"
     },
     "ignorePatterns": "/config/**"
 }

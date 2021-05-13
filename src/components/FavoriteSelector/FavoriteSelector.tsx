@@ -15,7 +15,7 @@ function FavoriteSelector({}: IProps) {
   const { closeModalWithDelay } = useModal();
 
   const onClose = useCallback(() => {
-    closeModalWithDelay('favoriteSelector', ref, 350);
+    closeModalWithDelay('favoriteSelector', ref, 300);
   }, []);
 
   useOutSideClick(ref, onClose);

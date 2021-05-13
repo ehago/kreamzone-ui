@@ -17,7 +17,7 @@ function AppDownloadGuide({}: IProps) {
   const { closeModalWithDelay } = useModal();
 
   const onClose = useCallback(() => {
-    closeModalWithDelay('appDownloadGuide', ref, 350);
+    closeModalWithDelay('appDownloadGuide', ref, 300);
   }, []);
 
   useOutSideClick(ref, onClose);

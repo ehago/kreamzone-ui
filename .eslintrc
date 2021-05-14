@@ -30,7 +30,8 @@
         "no-empty-pattern": "off",  // 빈 오브젝트 허용
         "prettier/prettier": "off",  // prettier 린트 무시
         "no-debugger": "off",
-        "prefer-const": "off"
+        "prefer-const": "off",
+        "@typescript-eslint/no-empty-function" : "off" 
     },
     "ignorePatterns": "/config/**"
 }

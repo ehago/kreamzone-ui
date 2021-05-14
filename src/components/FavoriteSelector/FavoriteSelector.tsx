@@ -1,12 +1,14 @@
 import BasicModal from '@components/BasicModal';
 import useModal from '@hooks/useModal';
 import useOutSideClick from '@hooks/useOutSideClick';
+import { useCallback, useRef } from 'react';
+import styled from 'styled-components';
+import ProductInfo from './ProductInfo';
+import SizeSelectArea from './SizeSelectArea';
 import {
   enterWithFadeInBottom,
   exitWithFadeOutBottom,
 } from '@libs/styles/animation';
-import { useCallback, useRef } from 'react';
-import styled from 'styled-components';
 
 interface IProps {}
 
@@ -18,6 +20,10 @@ function FavoriteSelector({}: IProps) {
     closeModalWithDelay('favoriteSelector', ref, 300);
   }, []);
 
+  const handleAddFavorite = () => {
+    alert('준비중입니다.');
+  };
+
   useOutSideClick(ref, onClose);
 
   return (
@@ -25,6 +31,13 @@ function FavoriteSelector({}: IProps) {
       <StyledFavoriteSelector ref={ref}>
         <div className="header">
           <h2>관심 상품 추가</h2>
+        </div>
+        <div className="content">
+          <ProductInfo />
+          <SizeSelectArea onSelect={handleAddFavorite} />
+          <div className="button-section">
+            <button onClick={onClose}>확인</button>
+          </div>
         </div>
       </StyledFavoriteSelector>
     </BasicModal>
@@ -49,6 +62,37 @@ const StyledFavoriteSelector = styled.div`
   }
 
   .content {
+    .button-section {
+      padding: 24px 32px 32px;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+
+      button {
+        width: 120px;
+        border: 1px solid #222;
+        padding: 0 18px;
+        height: 42px;
+        line-height: 40px;
+        border-radius: 12px;
+        font-size: 14px;
+        letter-spacing: -0.14px;
+        background-color: #fff;
+        color: inherit;
+        display: inline-block;
+        cursor: pointer;
+        vertical-align: middle;
+        text-align: center;
+        background-color: #fff;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+        transition: 0.15s all ease-out;
+
+        &:hover {
+          background-color: #f9f9f9;
+        }
+      }
+    }
   }
 `;
 

@@ -36,9 +36,9 @@ const StyledFavoriteButton = styled.button`
   cursor: pointer;
 
   .favorite-icon {
-    color: white;
+    fill: white;
     &.on {
-      color: #222;
+      fill: #222;
     }
   }
 `;

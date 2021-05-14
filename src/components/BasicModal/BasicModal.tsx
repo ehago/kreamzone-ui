@@ -1,15 +1,22 @@
 import ModalPositioner from '@components/ModalPositioner';
+import useOutSideClick from '@hooks/useOutSideClick';
+import { useRef } from 'react';
 import styled from 'styled-components';
 
 interface IProps {
   background?: string;
+  onClose: () => void;
   children: React.ReactNode;
 }
 
-function BasicModal({ background, children }: IProps) {
+function BasicModal({ background, children, onClose }: IProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useOutSideClick(ref, onClose);
+
   return (
     <ModalPositioner background={background}>
-      <StyledModalWrapper>{children}</StyledModalWrapper>
+      <StyledModalWrapper ref={ref}>{children}</StyledModalWrapper>
     </ModalPositioner>
   );
 }

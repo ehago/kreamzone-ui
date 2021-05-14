@@ -1,7 +1,6 @@
 import AppIcon from '@components/AppIcon';
 import BasicModal from '@components/BasicModal';
 import useModal from '@hooks/useModal';
-import useOutSideClick from '@hooks/useOutSideClick';
 import {
   enterWithFadeInBottom,
   exitWithFadeOutBottom,
@@ -20,10 +19,8 @@ function AppDownloadGuide({}: IProps) {
     closeModalWithDelay('appDownloadGuide', ref, 300);
   }, []);
 
-  useOutSideClick(ref, onClose);
-
   return (
-    <BasicModal>
+    <BasicModal onClose={onClose}>
       <StyledAppDownloadGuide ref={ref}>
         <div className="top">
           <p>앱 설치하여 사용해주세요!</p>

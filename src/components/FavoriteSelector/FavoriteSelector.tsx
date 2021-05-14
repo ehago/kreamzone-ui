@@ -1,6 +1,5 @@
 import BasicModal from '@components/BasicModal';
 import useModal from '@hooks/useModal';
-import useOutSideClick from '@hooks/useOutSideClick';
 import { useCallback, useRef } from 'react';
 import styled from 'styled-components';
 import ProductInfo from './ProductInfo';
@@ -13,21 +12,20 @@ import {
 interface IProps {}
 
 function FavoriteSelector({}: IProps) {
-  const ref = useRef<HTMLDivElement | null>(null);
   const { closeModalWithDelay } = useModal();
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const onClose = useCallback(() => {
-    closeModalWithDelay('favoriteSelector', ref, 300);
-  }, []);
+    // Exit 애니메이션을 위해 특정시간 딜레이 후 닫기 수행
+    closeModalWithDelay('favoriteSelector', ref, 250);
+  }, [ref]);
 
   const handleAddFavorite = () => {
     alert('준비중입니다.');
   };
 
-  useOutSideClick(ref, onClose);
-
   return (
-    <BasicModal>
+    <BasicModal onClose={onClose}>
       <StyledFavoriteSelector ref={ref}>
         <div className="header">
           <h2>관심 상품 추가</h2>

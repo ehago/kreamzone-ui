@@ -4,7 +4,7 @@ function useOutSideClick(ref: RefObject<HTMLElement>, callback: () => void) {
   useEffect(() => {
     const handleClick = (evt: any) => {
       if (ref.current && !ref.current.contains(evt.target)) {
-        callback();
+        callback?.();
       }
     };
 

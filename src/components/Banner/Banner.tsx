@@ -65,11 +65,11 @@ function Banner({}: IProps) {
 
   // 5초에 한 번씩 배너이미지 변경
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setTimeout(() => {
       setCursor((cursor) => (cursor + 1) % banners.length);
     }, 5000);
     return () => {
-      clearInterval(interval);
+      clearTimeout(timer);
     };
   }, [cursor]);
 

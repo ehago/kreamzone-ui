@@ -1,6 +1,9 @@
-import { RefObject, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-function useOutSideClick(ref: RefObject<HTMLElement>, callback: () => void) {
+function useOutSideClick(
+  ref: React.MutableRefObject<HTMLElement | null>,
+  callback: () => void,
+) {
   useEffect(() => {
     const handleClick = (evt: any) => {
       if (ref.current && !ref.current.contains(evt.target)) {

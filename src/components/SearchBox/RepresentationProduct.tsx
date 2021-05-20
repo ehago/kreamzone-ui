@@ -26,8 +26,6 @@ function RepresentationProduct({ product }: IProps) {
     } else {
       localStorage.setItem('search_history', JSON.stringify([keyword]));
     }
-
-    // 2. 검색 페이지로 이동
   };
 
   return (

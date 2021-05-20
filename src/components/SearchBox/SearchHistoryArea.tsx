@@ -45,6 +45,7 @@ const StyledSearchHistoryArea = styled.div`
   width: 704px;
   padding-left: 0;
   padding-right: 0;
+  padding-bottom: 21px;
   margin: 0 auto;
   overflow: hidden;
 

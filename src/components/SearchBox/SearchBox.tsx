@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import FullSearchBox from './FullSearchBox';
 import SearchIcon from './SearchIcon';
@@ -8,13 +8,25 @@ interface IProps {}
 function SearchBox({}: IProps) {
   const [fullMode, setFullMode] = useState(false);
 
+  const onOpen = () => {
+    setFullMode(true);
+  };
+
+  const onClose = useCallback(() => {
+    setFullMode(false);
+  }, []);
+
   return (
     <>
       <StyledSearchBox>
         <SearchIcon />
-        <input type="text" readOnly onClick={() => setFullMode(true)}></input>
+        <input
+          type="text"
+          readOnly
+          onClick={onOpen} //
+        />
       </StyledSearchBox>
-      {fullMode && <FullSearchBox onClose={() => setFullMode(false)} />}
+      {fullMode && <FullSearchBox onClose={onClose} />}
     </>
   );
 }

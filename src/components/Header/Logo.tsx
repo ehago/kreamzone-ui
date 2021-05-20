@@ -7,7 +7,6 @@ function Logo({}: IProps) {
     width: '120px',
     height: '24px',
   };
-
   return <AppIcon type="logo" style={logoStyle} />;
 }
 

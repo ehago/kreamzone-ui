@@ -1,10 +1,10 @@
 import AppIcon from '@components/AppIcon';
 import useOutSideClick from '@hooks/useOutSideClick';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
-import RepresentationProduct from './RepresentationProduct';
+import RepresentationProducts from './RepresentationProducts';
 import SearchHistoryArea from './SearchHistoryArea';
-import representations from './__data__/representations';
+import SearchResult from './SearchResult';
 
 interface IProps {
   onClose: () => void;
@@ -12,6 +12,11 @@ interface IProps {
 
 function FullSearchBox({ onClose }: IProps) {
   const ref = useRef<HTMLDivElement | null>(null);
+  const [keyword, setKeyword] = useState('');
+
+  const onChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    setKeyword(evt.target.value);
+  };
 
   useOutSideClick(ref, onClose);
 
@@ -22,23 +27,38 @@ function FullSearchBox({ onClose }: IProps) {
           <div className="search-box-wrapper">
             <div className="search-box">
               <AppIcon type="search" className="search-icon" />
-              <input type="text" placeholder="브랜드명, 모델명, 모델번호 등" />
+              <input
+                type="text"
+                placeholder="브랜드명, 모델명, 모델번호 등"
+                value={keyword}
+                onChange={onChange}
+                autoFocus
+              />
+              <button
+                className="remove-keyword-button"
+                onClick={() => setKeyword('')}
+              >
+                <AppIcon type="close" className="remove-icon" />
+              </button>
             </div>
           </div>
           <button className="cancel-button" onClick={onClose}>
             취소
           </button>
         </div>
-        <SearchHistoryArea />
-        <div className="image-area">
-          <ul className="image-list">
-            {
-              representations.map((product, i) => (
-                <RepresentationProduct key={i} product={product} />
-              )) //
-            }
-          </ul>
-        </div>
+        {
+          keyword.length ? (
+            <SearchResult
+              keyword={keyword}
+              result={false} //
+            />
+          ) : (
+            <>
+              <SearchHistoryArea />
+              <RepresentationProducts />
+            </>
+          ) //
+        }
       </div>
     </StyledFullSearchBox>
   );
@@ -83,6 +103,18 @@ const StyledFullSearchBox = styled.div`
             height: 24px;
             fill: rgb(187, 187, 187);
           }
+          .remove-keyword-button {
+            position: absolute;
+            top: 13px;
+            right: 13px;
+            width: 13px;
+            height: 13px;
+            border: none;
+            cursor: pointer;
+            .remove-icon {
+              fill: rgb(34, 34, 34);
+            }
+          }
 
           input {
             width: 100%;
@@ -118,17 +150,6 @@ const StyledFullSearchBox = styled.div`
         &:hover {
           color: #5d5d5d;
         }
-      }
-    }
-
-    .image-area {
-      position: relative;
-      padding-bottom: 42px;
-
-      .image-list {
-        width: 704px;
-        margin: 0 auto;
-        overflow: hidden;
       }
     }
   }

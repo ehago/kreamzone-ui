@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": ".", // import의 모듈 해석 시에 기준이 되는 경로를 지정
     "paths": {
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
@@ -9,23 +9,23 @@
       "@libs/*": ["src/libs/*"],
       "@store/*": ["src/store/*"],
     },
-    "target": "es5",
+    "target": "es5", // 어떠한 버전의 JavaScript 코드로 컴파일 할지 결정
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
+    "skipLibCheck": true, // 모든 선언 파일(.d.ts)의 타입 체킹을 스킵하도록 하는 설정
+    "esModuleInterop": true, // 
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true, // 파일 대소문자 구별 강제하는 설정
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    "module": "esnext", // 사용할 모듈 시스템(esnext는 현재 사용하고 있는 버전의 TypeScript가 지원하는 가장 높은 버전을 가리킨다.)
+    "moduleResolution": "node", // 모듈 해석 전략 (node와 classic이 있는데 classic을 사용할 일은 없다고 보면 된다) - 모듈 해석 방법은 공식 문서 참조
+    "resolveJsonModule": true, // 확장자가 .json인 모듈의 import를 허용하는 설정
+    "isolatedModules": true, // 
     "noEmit": true,
     "jsx": "react-jsx"
   },

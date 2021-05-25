@@ -1,7 +1,7 @@
 import ErrorTemplate from '@templates/ErrorTemplate';
 import { useHistory } from 'react-router';
 import styled from 'styled-components';
-import Header from './Header';
+import ErrorPageHeader from '@components/ErrorPageHeader';
 
 interface IProps {}
 
@@ -9,7 +9,7 @@ function ErrorPage({}: IProps) {
   const history = useHistory();
 
   return (
-    <ErrorTemplate Header={<Header />}>
+    <ErrorTemplate Header={<ErrorPageHeader />}>
       <ErrorContent>
         <img
           className="not-found-image"

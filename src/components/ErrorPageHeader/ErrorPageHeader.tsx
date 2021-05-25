@@ -4,11 +4,11 @@ import styled from 'styled-components';
 
 interface IProps {}
 
-function Header({}: IProps) {
+function ErrorPageHeader({}: IProps) {
   const history = useHistory();
 
   return (
-    <StyledHeader>
+    <StyledErrorPageHeader>
       <div
         className="logo"
         onClick={() => history.push('/')}
@@ -26,11 +26,11 @@ function Header({}: IProps) {
           onClick={() => alert('준비중입니다.')}
         />
       </div>
-    </StyledHeader>
+    </StyledErrorPageHeader>
   );
 }
 
-const StyledHeader = styled.div`
+const StyledErrorPageHeader = styled.div`
   background-color: rgba(0, 0, 0, 0);
   position: fixed;
   top: 0;
@@ -65,4 +65,4 @@ const StyledHeader = styled.div`
   }
 `;
 
-export default Header;
+export default ErrorPageHeader;

@@ -34,10 +34,10 @@ function Header({}: IProps) {
             <Link to="/notice">고객센터</Link>
           </li>
           <li>
-            <Link to="my">마이 페이지</Link>
+            <Link to="/my">마이 페이지</Link>
           </li>
           <li>
-            <Link to="login">로그인</Link>
+            <Link to="/login">로그인</Link>
           </li>
         </ul>
       </StyledGnb>

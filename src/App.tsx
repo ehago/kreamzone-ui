@@ -17,8 +17,8 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle /> {/* 글로벌 스타일링 */}
         <BrowserRouter>
-          <ScrollToTop />{' '}
           {/* 페이지 이동할 때 마다 스크롤을 올려주는 컴포넌트 */}
+          <ScrollToTop />
           <Switch>
             <Route path="/" component={LandingPage} exact />
             <Route path="/login" component={LoginPage} exact />

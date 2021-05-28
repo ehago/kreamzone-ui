@@ -8,23 +8,23 @@ interface IProps {
   on: boolean;
 }
 
-function FavoriteButton({ on }: IProps) {
+function InterestButton({ on }: IProps) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_on, setOn] = useState(on);
   const { openModal } = useModal();
 
   const onClick = () => {
-    openModal('favoriteSelector');
+    openModal('interestSelector');
   };
 
   return (
-    <StyledFavoriteButton onClick={onClick}>
-      <AppIcon type="favorite" className={cn('favorite-icon', { on: _on })} />
-    </StyledFavoriteButton>
+    <StyledInterestButton onClick={onClick}>
+      <AppIcon type="interest" className={cn('interest-icon', { on: _on })} />
+    </StyledInterestButton>
   );
 }
 
-const StyledFavoriteButton = styled.button`
+const StyledInterestButton = styled.button`
   border: none;
   background: none;
   position: absolute;
@@ -35,7 +35,7 @@ const StyledFavoriteButton = styled.button`
   height: 24px;
   cursor: pointer;
 
-  .favorite-icon {
+  .interest-icon {
     fill: white;
     &.on {
       fill: #222;
@@ -43,4 +43,4 @@ const StyledFavoriteButton = styled.button`
   }
 `;
 
-export default FavoriteButton;
+export default InterestButton;

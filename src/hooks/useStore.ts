@@ -1,5 +1,5 @@
-import { ModalStore, UserStore, FavoriteStore } from '@store/index';
+import { ModalStore, UserStore, InterestStore } from '@store/index';
 
-const useStore = () => ({ ModalStore, UserStore, FavoriteStore });
+const useStore = () => ({ ModalStore, UserStore, InterestStore });
 
 export default useStore;

@@ -1,7 +1,7 @@
 import { enterWithOpacity } from '@libs/styles/animation';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import FavoriteButton from './FavoriteButton';
+import InterestButton from './InterestButton';
 import { IProduct } from './__data__/products';
 
 interface IProps {
@@ -31,7 +31,7 @@ function LandingProduct({ product }: IProps) {
           </div>
         </div>
       </Link>
-      <FavoriteButton on={false} />
+      <InterestButton on={false} />
     </StyledLandingProduct>
   );
 }

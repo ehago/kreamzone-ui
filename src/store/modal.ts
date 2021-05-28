@@ -1,11 +1,11 @@
 import { observable } from 'mobx';
 
-export type IModal = 'appDownloadGuide' | 'favoriteSelector';
+export type IModal = 'appDownloadGuide' | 'interestSelector';
 export interface IModalStore {
   appDownloadGuide: {
     visible: boolean;
   };
-  favoriteSelector: {
+  interestSelector: {
     visible: boolean;
   };
   openModal: (type: IModal) => void;
@@ -16,7 +16,7 @@ export const ModalStore = observable<IModalStore>({
   appDownloadGuide: {
     visible: false,
   },
-  favoriteSelector: {
+  interestSelector: {
     visible: false,
   },
   openModal(type) {

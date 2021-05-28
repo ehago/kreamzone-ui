@@ -1,5 +1,5 @@
 import { ModalStore } from './modal';
 import { UserStore } from './user';
-import { FavoriteStore } from './favorite';
+import { InterestStore } from './interest';
 
-export { ModalStore, UserStore, FavoriteStore };
+export { ModalStore, UserStore, InterestStore };

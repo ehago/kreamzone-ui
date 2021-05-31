@@ -158,6 +158,8 @@ const StyledBanner = styled.div<{ background: string }>`
     transform: translateY(-50%);
     fill: white;
     cursor: pointer;
+    width: 24px;
+    height: 24px;
 
     &.left {
       left: 1.5rem;

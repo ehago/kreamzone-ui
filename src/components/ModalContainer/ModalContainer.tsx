@@ -1,7 +1,7 @@
 import AppDownloadGuide from '@components/AppDownloadGuide';
 import WishSelector from '@components/WishSelector';
 import useStore from '@hooks/useStore';
-import { useObserver } from 'mobx-react';
+import { Observer } from 'mobx-react';
 import { createPortal } from 'react-dom';
 
 interface IProps {}
@@ -13,15 +13,18 @@ function ModalContainer({}: IProps) {
 
   const { appDownloadGuide, wishSelector } = ModalStore;
 
-  const modals = useObserver(() => (
-    <>
-      {/* 앱 다운로드 모달 */}
-      {appDownloadGuide.visible && <AppDownloadGuide />}
-      {/* 관심상품 추가 모달 */}
-      {wishSelector.visible && <WishSelector />}
-      {/* {other modals..} */}
-    </>
-  ));
+  const modals = (
+    <Observer>
+      {
+        () => (
+          <>
+            {appDownloadGuide.visible && <AppDownloadGuide />}
+            {wishSelector.visible && <WishSelector />}
+          </>
+        ) //
+      }
+    </Observer>
+  );
 
   return createPortal(modals, modalRoot);
 }

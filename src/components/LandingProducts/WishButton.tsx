@@ -8,23 +8,23 @@ interface IProps {
   on: boolean;
 }
 
-function InterestButton({ on }: IProps) {
+function WishButton({ on }: IProps) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_on, setOn] = useState(on);
   const { openModal } = useModal();
 
   const onClick = () => {
-    openModal('interestSelector');
+    openModal('wishSelector');
   };
 
   return (
-    <StyledInterestButton onClick={onClick}>
-      <AppIcon type="interest" className={cn('interest-icon', { on: _on })} />
-    </StyledInterestButton>
+    <StyledWishButton onClick={onClick}>
+      <AppIcon type="wish" className={cn('wish-icon', { on: _on })} />
+    </StyledWishButton>
   );
 }
 
-const StyledInterestButton = styled.button`
+const StyledWishButton = styled.button`
   border: none;
   background: none;
   position: absolute;
@@ -35,7 +35,7 @@ const StyledInterestButton = styled.button`
   height: 24px;
   cursor: pointer;
 
-  .interest-icon {
+  .wish-icon {
     fill: white;
     &.on {
       fill: #222;
@@ -43,4 +43,4 @@ const StyledInterestButton = styled.button`
   }
 `;
 
-export default InterestButton;
+export default WishButton;

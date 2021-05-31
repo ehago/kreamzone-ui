@@ -1,5 +1,5 @@
 import AppDownloadGuide from '@components/AppDownloadGuide';
-import FavoriteSelector from '@components/InterestSelector';
+import WishSelector from '@components/WishSelector';
 import useStore from '@hooks/useStore';
 import { useObserver } from 'mobx-react';
 import { createPortal } from 'react-dom';
@@ -11,14 +11,14 @@ const modalRoot = document.querySelector('#modal') as HTMLElement;
 function ModalContainer({}: IProps) {
   const { ModalStore } = useStore();
 
-  const { appDownloadGuide, interestSelector } = ModalStore;
+  const { appDownloadGuide, wishSelector } = ModalStore;
 
   const modals = useObserver(() => (
     <>
       {/* 앱 다운로드 모달 */}
       {appDownloadGuide.visible && <AppDownloadGuide />}
       {/* 관심상품 추가 모달 */}
-      {interestSelector.visible && <FavoriteSelector />}
+      {wishSelector.visible && <WishSelector />}
       {/* {other modals..} */}
     </>
   ));

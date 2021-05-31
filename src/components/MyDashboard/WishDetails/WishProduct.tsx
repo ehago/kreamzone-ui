@@ -1,4 +1,3 @@
-import { enterWithOpacity } from '@libs/styles/animation';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import WishButton from './WishButton';
@@ -8,22 +7,28 @@ interface IProps {
   product: IProduct;
 }
 
-function LandingProduct({ product }: IProps) {
+function WishProduct({ product }: IProps) {
   return (
-    <StyledLandingProduct>
-      <Link to="/product/3241">
-        <div className="inside">
-          <img src={product.productImage} alt={product.desc} />
+    <StyledWishProduct>
+      <Link to="qwd" className="wish-product-inner">
+        <div className="image-wrapper">
+          <img
+            src={product.productImage}
+            alt={product.desc} //
+          />
         </div>
         <div className="info-box">
           <div className="brand">
-            <img src={product.brandImage} alt={product.brand} />
+            <img
+              src={product.brandImage}
+              alt={product.brand} //
+            />
           </div>
-          <div className="name">{product.name}</div>
+          <p className="name">{product.name}</p>
           <div className="price">
             <div className="amount">
-              <em>{product.price}</em>
-              <div className="won">원</div>
+              <em className="num">{product.price}</em>
+              <span className="won lg">원</span>
             </div>
             <div className="desc">
               <p>즉시 구매가</p>
@@ -31,41 +36,50 @@ function LandingProduct({ product }: IProps) {
           </div>
         </div>
       </Link>
-      <WishButton on={false} />
-    </StyledLandingProduct>
+      <WishButton />
+    </StyledWishProduct>
   );
 }
 
-const StyledLandingProduct = styled.li`
+const StyledWishProduct = styled.div`
+  padding: 0 10px;
   position: relative;
   float: left;
   margin: 20px 0;
-  padding: 0 12px;
+  margin-top: 3px;
   width: 25%;
-  animation: ${enterWithOpacity} 0.4s ease-in-out;
-  a {
+  transition: all 0.4s ease-in-out;
+
+  .wish-product-inner {
     display: block;
     background-color: #fff;
     border-radius: 12px;
 
-    .inside {
-      background: #f1f1ea;
-      // #ebf0f5, #f4f4f4, #f6eeed (파 회 빨 )
-
+    .image-wrapper {
       overflow: hidden;
       position: relative;
       padding-top: 100%;
       border-radius: 12px;
+      background-color: rgb(241, 241, 234);
 
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0);
+      }
       img {
         position: absolute;
         top: 50%;
         left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         width: 81.5%;
         height: auto;
+        border: 0;
+        vertical-align: top;
       }
     }
 
@@ -78,42 +92,46 @@ const StyledLandingProduct = styled.li`
         img {
           width: auto;
           height: 20px;
+          border: 0;
+          vertical-align: top;
         }
       }
       .name {
+        height: 43px;
+        font-size: 13px;
         padding-top: 10px;
-        height: 46px;
         overflow: hidden;
-        -o-text-overflow: ellipsis;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         white-space: normal;
-        font-size: 14px;
         color: #222;
       }
       .price {
         padding-top: 8px;
+
         .amount {
           height: 20px;
           font-weight: 700;
           color: #222;
-          em {
+
+          .num {
             display: inline-block;
             vertical-align: top;
             line-height: 20px;
-            font-size: 15px;
+            font-size: 13px;
             letter-spacing: -0.04px;
           }
           .won {
-            line-height: 21px;
-            font-size: 14px;
             display: inline-block;
             vertical-align: top;
+            line-height: 21px;
+            font-size: 12px;
             letter-spacing: -0.04px;
           }
         }
+
         .desc {
           padding-top: 1px;
           font-size: 11px;
@@ -124,4 +142,4 @@ const StyledLandingProduct = styled.li`
   }
 `;
 
-export default LandingProduct;
+export default WishProduct;

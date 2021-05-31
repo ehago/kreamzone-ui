@@ -41,7 +41,7 @@ const StyledAnimatedRouter = styled.div`
   }
   .fade-enter.fade-enter-active {
     opacity: 1;
-    transition: opacity 0.4s ease-in;
+    transition: opacity 0.3s ease-in;
   }
   .fade-exit {
     display: none;

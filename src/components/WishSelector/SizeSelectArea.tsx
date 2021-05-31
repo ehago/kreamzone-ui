@@ -13,7 +13,7 @@ function SizeSelectArea({ onSelect }: IProps) {
           <div className="size-item" key={i} onClick={() => onSelect()}>
             <div>
               <p>250</p>
-              <AppIcon type="interest" />
+              <AppIcon type="wish" />
             </div>
           </div>
         )) //

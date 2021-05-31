@@ -11,13 +11,13 @@ import {
 
 interface IProps {}
 
-function InterestSelector({}: IProps) {
+function WishSelector({}: IProps) {
   const { closeModalWithDelay } = useModal();
   const ref = useRef<HTMLDivElement | null>(null);
 
   const onClose = useCallback(() => {
     // Exit 애니메이션을 위해 특정시간 딜레이 후 닫기 수행
-    closeModalWithDelay('interestSelector', ref, 250);
+    closeModalWithDelay('wishSelector', ref, 250);
   }, [ref]);
 
   const handleAddFavorite = () => {
@@ -26,7 +26,7 @@ function InterestSelector({}: IProps) {
 
   return (
     <BasicModal onClose={onClose}>
-      <StyledInterestSelector ref={ref}>
+      <StyledWishSelector ref={ref}>
         <div className="header">
           <h2>관심 상품 추가</h2>
         </div>
@@ -37,12 +37,12 @@ function InterestSelector({}: IProps) {
             <button onClick={onClose}>확인</button>
           </div>
         </div>
-      </StyledInterestSelector>
+      </StyledWishSelector>
     </BasicModal>
   );
 }
 
-const StyledInterestSelector = styled.div`
+const StyledWishSelector = styled.div`
   width: 440px;
   animation: ${enterWithFadeInBottom} 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
   &.exit {
@@ -94,4 +94,4 @@ const StyledInterestSelector = styled.div`
   }
 `;
 
-export default InterestSelector;
+export default WishSelector;

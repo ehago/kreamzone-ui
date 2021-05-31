@@ -1,9 +1,19 @@
 import styled from 'styled-components';
+import TradeDetails from './TradeDetails';
+import UserInfo from './UserInfo';
+import WishDetails from './WishDetails';
 
 interface IProps {}
 
 function MyDashboard({}: IProps) {
-  return <StyledMyDashboard>MyDashboard</StyledMyDashboard>;
+  return (
+    <StyledMyDashboard>
+      <UserInfo />
+      <TradeDetails type="buying" />
+      <TradeDetails type="selling" />
+      <WishDetails />
+    </StyledMyDashboard>
+  );
 }
 
 const StyledMyDashboard = styled.div`

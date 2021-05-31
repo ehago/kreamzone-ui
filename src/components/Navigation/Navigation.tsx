@@ -54,6 +54,10 @@ const StyledNavigation = styled.div`
     letter-spacing: -0.15px;
     color: rgba(34, 34, 34, 0.5);
 
+    &:hover {
+      color: #80808080;
+    }
+
     &.active {
       color: #222;
       font-weight: 700;

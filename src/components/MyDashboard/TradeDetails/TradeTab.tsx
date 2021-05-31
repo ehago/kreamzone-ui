@@ -32,6 +32,11 @@ function TradeTab({ to, total, text, count }: IProps) {
 const StyledTradeTab = styled.div`
   display: table-cell;
   text-align: center;
+  transition: 0.15s background linear;
+
+  &:hover {
+    background: #f1f1f1;
+  }
 
   a {
     position: relative;

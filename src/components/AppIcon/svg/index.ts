@@ -9,6 +9,9 @@ import { ReactComponent as leftChevron } from './left-chevron.svg';
 import { ReactComponent as rightChevron } from './right-chevron.svg';
 import { ReactComponent as wish } from './wish.svg';
 import { ReactComponent as more } from './more.svg';
+import { ReactComponent as grayRightChevron } from './gray-right-chevron.svg';
+import { ReactComponent as downCircle } from './down-circle.svg';
+
 
 export {
   logo,
@@ -22,4 +25,6 @@ export {
   rightChevron,
   wish,
   more,
+  grayRightChevron,
+  downCircle,
 };

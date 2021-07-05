@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import LandingPage from '@pages/LandingPage';
 import LoginPage from '@pages/LoginPage';
+import ProductPage from '@pages/ProductPage';
 import MyPage from '@pages/MyPage';
 import ErrorPage from '@pages/ErrorPage';
 import GlobalStyle from '@libs/styles/global';
@@ -23,6 +24,7 @@ function App() {
           <Switch>
             <Route path="/" component={LandingPage} exact />
             <Route path="/login" component={LoginPage} exact />
+            <Route path="/product" component={ProductPage} exact />
             <Route path="/my" component={MyPage} />
             <Route component={ErrorPage} exact />
           </Switch>

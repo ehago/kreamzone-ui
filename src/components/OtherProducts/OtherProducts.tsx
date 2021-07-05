@@ -44,8 +44,6 @@ const StyledOtherProducts = styled.div`
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     max-width: 100%;
     font-size: 20px;

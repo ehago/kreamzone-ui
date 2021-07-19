@@ -1,5 +1,5 @@
 import AppIcon from '@components/AppIcon';
-import { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import cn from 'classnames';
 import CursorList from './CursorList';
@@ -156,4 +156,4 @@ const StyledBanner = styled.div<{ background: string }>`
   font-size: 2rem;
 `;
 
-export default Banner;
+export default React.memo(Banner);

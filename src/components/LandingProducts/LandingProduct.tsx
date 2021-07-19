@@ -1,28 +1,29 @@
+import { IDropped } from '@libs/apis/landing';
 import { enterWithOpacity } from '@libs/styles/animation';
+import { toPriceFormat } from '@libs/utils/format';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import WishButton from './WishButton';
-import { IProduct } from './__data__/products';
 
 interface IProps {
-  product: IProduct;
+  product: IDropped;
 }
 
 function LandingProduct({ product }: IProps) {
   return (
     <StyledLandingProduct>
       <Link to="/product/3241">
-        <div className="inside">
-          <img src={product.productImage} alt={product.desc} />
+        <div className="inside" style={{ background: product.brand.background }}>
+          <img src={product.image} alt={'상품 이미지'} />
         </div>
         <div className="info-box">
           <div className="brand">
-            <img src={product.brandImage} alt={product.brand} />
+            <img src={product.brand.image} alt="브랜드 로고" />
           </div>
-          <div className="name">{product.name}</div>
+          <div className="name">{product.eng_name}</div>
           <div className="price">
             <div className="amount">
-              <em>{product.price}</em>
+              <em>{toPriceFormat(product.immediately_purchase_price)}</em>
               <div className="won">원</div>
             </div>
             <div className="desc">

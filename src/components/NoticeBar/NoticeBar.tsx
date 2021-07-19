@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import useNoti from './hooks/useNoti';
@@ -5,24 +6,26 @@ import useNoti from './hooks/useNoti';
 interface IProps {}
 
 function NoticeBar({}: IProps) {
-  const notiQuery = useNoti();
+  // const notiQuery = useNoti();
 
-  const visible = !!notiQuery.data?.length;
+  // const visible = !!notiQuery.data?.length;
+  const visible = false;
 
   // TODO: 공지가 2개 이상일 경우 슬라이더 효과 처리
   return (
     <StyledNoticeBar visible={visible}>
       {
-        visible &&
-          notiQuery.data?.map((noti) => (
-            <Link
-              key={noti.id}
-              to={`/notice/${noti.id}`}
-              className="notice" //
-            >
-              &nbsp;{noti.noti}&nbsp;
-            </Link>
-          )) //
+        // visible &&
+        //   notiQuery.data?.map((noti) => (
+        //     <Link
+        //       key={noti.id}
+        //       to={`/notice/${noti.id}`}
+        //       className="notice" //
+        //     >
+        //       &nbsp;{noti.noti}&nbsp;
+        //     </Link>
+        //   )) //
+        visible && null
       }
     </StyledNoticeBar>
   );

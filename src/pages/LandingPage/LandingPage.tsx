@@ -1,8 +1,7 @@
-import Banner from '@components/Banner';
 import Footer from '@components/Footer';
 import GuideBanner from '@components/GuideBanner';
 import Header from '@components/Header';
-import LandingProducts from '@components/LandingProducts';
+import LandingPageContents from '@components/LandingPageContents';
 import NoticeBar from '@components/NoticeBar';
 import BasicTemplate from '@templates/BasicTemplate';
 
@@ -11,22 +10,9 @@ function LandingPage() {
     <BasicTemplate
       Header={<Header />}
       NoticeBar={<NoticeBar />}
-      Content={
-        <>
-          <Banner />
-          <LandingProducts
-            title="Just Dropped"
-            subTitle="발매 상품" //
-          />
-          <LandingProducts
-            title="Most Popular"
-            subTitle="인기 상품" //
-          />
-          <LandingProducts title="Washed Out Tones" subTitle="추천 상품" noRepresentation />
-        </>
-      }
+      Content={<LandingPageContents />}
       GuideBanner={<GuideBanner />}
-      Footer={<Footer />}
+      Footer={<Footer />} //
     />
   );
 }

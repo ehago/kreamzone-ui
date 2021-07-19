@@ -1,23 +1,31 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { IDropped } from '@libs/apis/landing';
 import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import LandingProduct from './LandingProduct';
 import RepresentationImage from './RepresentationImage';
-import products from './__data__/products';
+
 interface IProps {
   title: string;
   subTitle: string;
+  isLoading: boolean;
   noRepresentation?: boolean;
+  products: IDropped[];
 }
 
-function LandingProducts({ title, subTitle, noRepresentation = false }: IProps) {
+function LandingProducts({ title, subTitle, isLoading, noRepresentation = false, products }: IProps) {
   const [viewLimit, setViewLimit] = useState(4); // 최초에는 최대 4개의 제품만 보여줌
 
   const onMore = () => {
     setViewLimit((viewLimit) => viewLimit + 4);
   };
 
-  const visibleProducts = useMemo(() => products.slice(0, viewLimit), [viewLimit]);
+  const visibleProducts = useMemo(() => products.slice(0, viewLimit), [viewLimit, products]);
   const isMore = visibleProducts.length < products.length;
+  if (title === 'Just Dropped') {
+    console.log(products);
+    console.log(visibleProducts);
+  }
 
   return (
     <StyledLandingProducts>
@@ -28,8 +36,8 @@ function LandingProducts({ title, subTitle, noRepresentation = false }: IProps) 
       <div className="product-list-wrapper">
         <ul className="product-list">
           {
-            visibleProducts.map((product) => (
-              <LandingProduct key={product.id} product={product} />
+            visibleProducts.map((product, index) => (
+              <LandingProduct key={index} product={product} />
             )) //
           }
         </ul>

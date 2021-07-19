@@ -9,20 +9,14 @@ interface IProps {
   noRepresentation?: boolean;
 }
 
-function LandingProducts({
-  title,
-  subTitle,
-  noRepresentation = false,
-}: IProps) {
+function LandingProducts({ title, subTitle, noRepresentation = false }: IProps) {
   const [viewLimit, setViewLimit] = useState(4); // 최초에는 최대 4개의 제품만 보여줌
 
   const onMore = () => {
     setViewLimit((viewLimit) => viewLimit + 4);
   };
 
-  const visibleProducts = useMemo(() => products.slice(0, viewLimit), [
-    viewLimit,
-  ]);
+  const visibleProducts = useMemo(() => products.slice(0, viewLimit), [viewLimit]);
   const isMore = visibleProducts.length < products.length;
 
   return (

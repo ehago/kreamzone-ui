@@ -8,11 +8,7 @@ function UserInfo({}: IProps) {
     <StyledUserInfo>
       <StyledUserDetails>
         <div className="user-thumb">
-          <img
-            src="https://kream.co.kr/_nuxt/img/blank_profile.4347742.png"
-            alt="사용자 이미지"
-            className="user-thumb-img"
-          />
+          <img src="https://kream.co.kr/_nuxt/img/blank_profile.4347742.png" alt="사용자 이미지" className="user-thumb-img" />
         </div>
         <div className="user-info">
           <div>

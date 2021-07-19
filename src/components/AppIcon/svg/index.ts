@@ -12,19 +12,4 @@ import { ReactComponent as more } from './more.svg';
 import { ReactComponent as grayRightChevron } from './gray-right-chevron.svg';
 import { ReactComponent as downCircle } from './down-circle.svg';
 
-
-export {
-  logo,
-  search,
-  instagram,
-  facebook,
-  channel,
-  naver,
-  close,
-  leftChevron,
-  rightChevron,
-  wish,
-  more,
-  grayRightChevron,
-  downCircle,
-};
+export { logo, search, instagram, facebook, channel, naver, close, leftChevron, rightChevron, wish, more, grayRightChevron, downCircle };

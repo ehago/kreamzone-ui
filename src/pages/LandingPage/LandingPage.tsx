@@ -22,11 +22,7 @@ function LandingPage() {
             title="Most Popular"
             subTitle="인기 상품" //
           />
-          <LandingProducts
-            title="Washed Out Tones"
-            subTitle="추천 상품"
-            noRepresentation
-          />
+          <LandingProducts title="Washed Out Tones" subTitle="추천 상품" noRepresentation />
         </>
       }
       GuideBanner={<GuideBanner />}

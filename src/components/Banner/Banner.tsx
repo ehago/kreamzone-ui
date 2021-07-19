@@ -79,13 +79,7 @@ function Banner({}: IProps) {
         <div className="banner-image-list">
           {
             banners.map((banner, i) => (
-              <img
-                key={i}
-                className={cn('banner-image', { active: cursor === i })}
-                src={banner.image}
-                alt="배너 이미지"
-                onClick={() => history.push(banner.to)}
-              />
+              <img key={i} className={cn('banner-image', { active: cursor === i })} src={banner.image} alt="배너 이미지" onClick={() => history.push(banner.to)} />
             )) //
           }
         </div>
@@ -96,22 +90,8 @@ function Banner({}: IProps) {
         onClick={onClickCursor} //
       />
       {/* 좌 우 버튼 */}
-      <AppIcon
-        type="leftChevron"
-        className="chevron left"
-        style={{ fill: banners[cursor].chevronColor }}
-        onClick={() =>
-          setCursor((prev) => (prev - 1 < 0 ? banners.length - 1 : prev - 1))
-        }
-      />
-      <AppIcon
-        type="rightChevron"
-        className="chevron right"
-        style={{ fill: banners[cursor].chevronColor }}
-        onClick={() =>
-          setCursor((prev) => (prev + 1 > banners.length - 1 ? 0 : prev + 1))
-        }
-      />
+      <AppIcon type="leftChevron" className="chevron left" style={{ fill: banners[cursor].chevronColor }} onClick={() => setCursor((prev) => (prev - 1 < 0 ? banners.length - 1 : prev - 1))} />
+      <AppIcon type="rightChevron" className="chevron right" style={{ fill: banners[cursor].chevronColor }} onClick={() => setCursor((prev) => (prev + 1 > banners.length - 1 ? 0 : prev + 1))} />
     </StyledBanner>
   );
 }

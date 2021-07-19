@@ -11,10 +11,7 @@ function ErrorPage({}: IProps) {
   return (
     <ErrorTemplate Header={<ErrorPageHeader />}>
       <ErrorContent>
-        <img
-          className="not-found-image"
-          src="https://www.kream.co.kr/_nuxt/img/illust-err.80560ce.svg"
-        />
+        <img className="not-found-image" src="https://www.kream.co.kr/_nuxt/img/illust-err.80560ce.svg" />
         <div className="title">요청하신 페이지를 찾을 수 없습니다.</div>
         <div className="sub-title">
           주소가 올바르지 않거나 알 수 없는 오류로 인해

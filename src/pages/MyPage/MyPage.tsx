@@ -17,11 +17,7 @@ interface IProps {}
 
 function MyPage({}: IProps) {
   return (
-    <NavigationTemplate
-      Header={<Header />}
-      Footer={<Footer />}
-      Navigation={<MyPageNavigation />}
-    >
+    <NavigationTemplate Header={<Header />} Footer={<Footer />} Navigation={<MyPageNavigation />}>
       <AnimatedRouter animation="fade" timeout={300}>
         <Route path="/my" component={MyDashboard} exact />
         <Route path="/my/buying" component={BuyingDetails} exact />

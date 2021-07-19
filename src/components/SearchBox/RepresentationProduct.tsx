@@ -19,10 +19,7 @@ function RepresentationProduct({ product }: IProps) {
     // 1. 해당 상품 검색페이지로 이동하기전 검색 히스토리 저장
     let _searchHistory = localStorage.getItem('search_history');
     if (_searchHistory) {
-      localStorage.setItem(
-        'search_history',
-        JSON.stringify(JSON.parse(_searchHistory).concat(keyword)),
-      );
+      localStorage.setItem('search_history', JSON.stringify(JSON.parse(_searchHistory).concat(keyword)));
     } else {
       localStorage.setItem('search_history', JSON.stringify([keyword]));
     }
@@ -30,10 +27,7 @@ function RepresentationProduct({ product }: IProps) {
 
   return (
     <StyledRepresentationProduct color={color}>
-      <Link
-        to={`/search?keyword=${product.modelType}`}
-        onClick={() => onMove(product.modelType)}
-      >
+      <Link to={`/search?keyword=${product.modelType}`} onClick={() => onMove(product.modelType)}>
         <img src={product.imageUrl} alt={product.modelType} />
         <p>{product.modelType}</p>
       </Link>

@@ -13,17 +13,10 @@ function CursorList({ banners, cursor, onClick }: IProps) {
   const activeCursorColor = banners[cursor].activeCursorColor;
 
   return (
-    <StyledCursorList
-      cursorColor={cursorColor}
-      activeCursorColor={activeCursorColor}
-    >
+    <StyledCursorList cursorColor={cursorColor} activeCursorColor={activeCursorColor}>
       {
         Array.from({ length: banners.length }, (_, i) => (
-          <li
-            key={i}
-            className={cn({ active: i === cursor })}
-            onClick={() => onClick(i)}
-          />
+          <li key={i} className={cn({ active: i === cursor })} onClick={() => onClick(i)} />
         )) //
       }
     </StyledCursorList>

@@ -17,11 +17,7 @@ function Header({}: IProps) {
 
   return (
     <StyledHeader>
-      <AppIcon
-        type="logo"
-        style={logoStyle}
-        onClick={() => history.push('/')}
-      />
+      <AppIcon type="logo" style={logoStyle} onClick={() => history.push('/')} />
       <StyledSearchBox>
         <SearchBox />
       </StyledSearchBox>

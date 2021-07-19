@@ -21,11 +21,7 @@ function AnimatedRouter({ timeout, animation, children }: IProps) {
   return (
     <StyledAnimatedRouter>
       <TransitionGroup>
-        <CSSTransition
-          key={location.key}
-          classNames={animation}
-          timeout={timeout}
-        >
+        <CSSTransition key={location.key} classNames={animation} timeout={timeout}>
           <Switch location={location}>{children}</Switch>
         </CSSTransition>
       </TransitionGroup>

@@ -6,11 +6,7 @@ interface IProps {
 }
 
 function ModalPositioner({ background, children }: IProps) {
-  return (
-    <StyledModalPositioner background={background}>
-      {children}
-    </StyledModalPositioner>
-  );
+  return <StyledModalPositioner background={background}>{children}</StyledModalPositioner>;
 }
 
 const StyledModalPositioner = styled.div<{ background?: string }>`

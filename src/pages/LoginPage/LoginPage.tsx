@@ -7,14 +7,7 @@ import BasicTemplate from '@templates/BasicTemplate';
 interface IProps {}
 
 function LoginPage({}: IProps) {
-  return (
-    <BasicTemplate
-      Header={<Header />}
-      Content={<LoginForm />}
-      GuideBanner={<GuideBanner />}
-      Footer={<Footer />}
-    />
-  );
+  return <BasicTemplate Header={<Header />} Content={<LoginForm />} GuideBanner={<GuideBanner />} Footer={<Footer />} />;
 }
 
 export default LoginPage;

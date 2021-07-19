@@ -1,10 +1,7 @@
 import AppIcon from '@components/AppIcon';
 import BasicModal from '@components/BasicModal';
 import useModal from '@hooks/useModal';
-import {
-  enterWithFadeInBottom,
-  exitWithFadeOutBottom,
-} from '@libs/styles/animation';
+import { enterWithFadeInBottom, exitWithFadeOutBottom } from '@libs/styles/animation';
 import { useCallback, useRef } from 'react';
 import styled from 'styled-components';
 
@@ -25,10 +22,7 @@ function AppDownloadGuide({}: IProps) {
         <div className="top">
           <p>앱 설치하여 사용해주세요!</p>
           <div className="qrcode">
-            <img
-              src="https://kream.co.kr/_nuxt/img/img_qr.f79040b.jpg"
-              alt="qr 코드"
-            />
+            <img src="https://kream.co.kr/_nuxt/img/img_qr.f79040b.jpg" alt="qr 코드" />
           </div>
         </div>
         <div className="bottom">

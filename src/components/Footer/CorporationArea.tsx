@@ -18,15 +18,11 @@ function CorporationArea({}: IProps) {
       <div className="business-info">
         <div className="info-list">
           <dl className="info-item">크림 주식회사 · 대표 김창욱</dl>
-          <dl className="info-item">
-            사업자등록번호: 570-88-01618 사업자정보확인
-          </dl>
+          <dl className="info-item">사업자등록번호: 570-88-01618 사업자정보확인</dl>
           <dl className="info-item">통신판매업 제 2021-성남분당C-0093호</dl>
         </div>
         <div className="info-list">
-          <dl className="info-item">
-            사업장소재지: 경기도 성남시 분당구 분당내곡로 117, 8층
-          </dl>
+          <dl className="info-item">사업장소재지: 경기도 성남시 분당구 분당내곡로 117, 8층</dl>
           <dl className="info-item">개인정보관리책임자: 김미진</dl>
           <dl className="info-item">호스팅 서비스: 네이버 클라우드 (주)</dl>
         </div>

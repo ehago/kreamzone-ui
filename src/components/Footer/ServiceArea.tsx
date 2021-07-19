@@ -33,9 +33,7 @@ function ServiceArea({}: IProps) {
         <ul className="service-time">
           <li>
             운영시간
-            <span className="tel">
-              평일 11:00 - 18:00 (토 ∙ 일, 공휴일 휴무)
-            </span>
+            <span className="tel">평일 11:00 - 18:00 (토 ∙ 일, 공휴일 휴무)</span>
           </li>
           <li>
             점심시간

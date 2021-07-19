@@ -27,17 +27,8 @@ function FullSearchBox({ onClose }: IProps) {
           <div className="search-box-wrapper">
             <div className="search-box">
               <AppIcon type="search" className="search-icon" />
-              <input
-                type="text"
-                placeholder="브랜드명, 모델명, 모델번호 등"
-                value={keyword}
-                onChange={onChange}
-                autoFocus
-              />
-              <button
-                className="remove-keyword-button"
-                onClick={() => setKeyword('')}
-              >
+              <input type="text" placeholder="브랜드명, 모델명, 모델번호 등" value={keyword} onChange={onChange} autoFocus />
+              <button className="remove-keyword-button" onClick={() => setKeyword('')}>
                 <AppIcon type="close" className="remove-icon" />
               </button>
             </div>

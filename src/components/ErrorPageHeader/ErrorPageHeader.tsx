@@ -15,16 +15,8 @@ function ErrorPageHeader({}: IProps) {
         //
       />
       <div className="sns-box">
-        <AppIcon
-          type="facebook"
-          className="facebook icon"
-          onClick={() => alert('준비중입니다.')}
-        />
-        <AppIcon
-          type="instagram"
-          className="instagram icon"
-          onClick={() => alert('준비중입니다.')}
-        />
+        <AppIcon type="facebook" className="facebook icon" onClick={() => alert('준비중입니다.')} />
+        <AppIcon type="instagram" className="instagram icon" onClick={() => alert('준비중입니다.')} />
       </div>
     </StyledErrorPageHeader>
   );

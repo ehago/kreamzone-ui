@@ -4,10 +4,7 @@ import { useCallback, useRef } from 'react';
 import styled from 'styled-components';
 import ProductInfo from './ProductInfo';
 import SizeSelectArea from './SizeSelectArea';
-import {
-  enterWithFadeInBottom,
-  exitWithFadeOutBottom,
-} from '@libs/styles/animation';
+import { enterWithFadeInBottom, exitWithFadeOutBottom } from '@libs/styles/animation';
 
 interface IProps {}
 

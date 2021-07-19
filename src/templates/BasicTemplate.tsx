@@ -8,13 +8,7 @@ interface IProps {
   Footer: React.ReactNode;
 }
 
-function BasicTemplate({
-  Header,
-  NoticeBar,
-  Content,
-  GuideBanner,
-  Footer,
-}: IProps) {
+function BasicTemplate({ Header, NoticeBar, Content, GuideBanner, Footer }: IProps) {
   return (
     <StyledBasicTemplate>
       {Header}

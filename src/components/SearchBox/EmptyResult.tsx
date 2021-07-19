@@ -7,8 +7,7 @@ function EmptyResult({}: IProps) {
     <StyledEmptyResult>
       <p className="main">검색하신 결과가 없습니다.</p>
       <p className="sub">
-        상품 등록 요청은 앱 <span className="emphasis">1:1 문의하기</span> 로
-        요청해주세요.
+        상품 등록 요청은 앱 <span className="emphasis">1:1 문의하기</span> 로 요청해주세요.
       </p>
     </StyledEmptyResult>
   );

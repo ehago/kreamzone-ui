@@ -11,19 +11,8 @@ function LoginForm({}: IProps) {
     <StyledLoginForm>
       <div className="inner-wrapper">
         <div className="login-title" />
-        <InputBox
-          type="text"
-          label="이메일 주소"
-          placeholder="예) kream@kream.co.kr"
-          error={false}
-          errorMessage="이메일 주소를 정확히 입력해주세요."
-        />
-        <InputBox
-          type="text"
-          label="비밀번호"
-          error={false}
-          errorMessage="영문, 숫자, 특수문자를 조합해서 입력해주세요. (8-16자)"
-        />
+        <InputBox type="text" label="이메일 주소" placeholder="예) kream@kream.co.kr" error={false} errorMessage="이메일 주소를 정확히 입력해주세요." />
+        <InputBox type="text" label="비밀번호" error={false} errorMessage="영문, 숫자, 특수문자를 조합해서 입력해주세요. (8-16자)" />
         <div className="login-button-wrapper">
           <LoginButton
             disabled={false}
@@ -31,10 +20,7 @@ function LoginForm({}: IProps) {
           >
             로그인
           </LoginButton>
-          <NaverLoginButton
-            disabled={false}
-            onClick={() => console.log('clicked')}
-          >
+          <NaverLoginButton disabled={false} onClick={() => console.log('clicked')}>
             네이버 로그인
           </NaverLoginButton>
         </div>
@@ -71,8 +57,7 @@ const StyledLoginForm = styled.div`
       font-size: 0;
       width: 250px;
       height: 56px;
-      background: url('https://kream.co.kr/_nuxt/img/login_title.9f9ccc8.png')
-        no-repeat;
+      background: url('https://kream.co.kr/_nuxt/img/login_title.9f9ccc8.png') no-repeat;
       background-size: 250px 56px;
     }
 

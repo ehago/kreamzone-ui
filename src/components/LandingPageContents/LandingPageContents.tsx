@@ -4,7 +4,7 @@ import LandingProducts from '@components/LandingProducts';
 import useLandingPageContent from './hooks/useLandingPageContent';
 
 function LandingPageContents() {
-  const { isLoaindg, droppedList, popularList, recommendedList } = useLandingPageContent();
+  const { isLoading, droppedList, popularList, recommendedList } = useLandingPageContent();
 
   return (
     <>
@@ -12,20 +12,20 @@ function LandingPageContents() {
       <LandingProducts
         title="Just Dropped"
         subTitle="발매 상품"
-        isLoading={isLoaindg}
+        isLoading={isLoading}
         products={droppedList} //
       />
       <LandingProducts
         title="Most Popular"
         subTitle="인기 상품"
-        isLoading={isLoaindg}
+        isLoading={isLoading}
         products={popularList} //
       />
       <LandingProducts
         title="Washed Out Tones"
         subTitle="추천 상품"
         noRepresentation
-        isLoading={isLoaindg}
+        isLoading={isLoading}
         products={recommendedList} //
       />
     </>

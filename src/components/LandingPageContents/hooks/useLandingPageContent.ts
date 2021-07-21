@@ -34,7 +34,7 @@ function useLandingPageContent() {
   }, []);
 
   return {
-    isLoaindg: !!loading,
+    isLoading: !!loading,
     droppedList,
     popularList,
     recommendedList,

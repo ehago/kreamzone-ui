@@ -22,10 +22,6 @@ function LandingProducts({ title, subTitle, isLoading, noRepresentation = false,
 
   const visibleProducts = useMemo(() => products.slice(0, viewLimit), [viewLimit, products]);
   const isMore = visibleProducts.length < products.length;
-  if (title === 'Just Dropped') {
-    console.log(products);
-    console.log(visibleProducts);
-  }
 
   return (
     <StyledLandingProducts>
@@ -36,8 +32,8 @@ function LandingProducts({ title, subTitle, isLoading, noRepresentation = false,
       <div className="product-list-wrapper">
         <ul className="product-list">
           {
-            visibleProducts.map((product, index) => (
-              <LandingProduct key={index} product={product} />
+            visibleProducts.map((product) => (
+              <LandingProduct key={product.item_id} product={product} />
             )) //
           }
         </ul>

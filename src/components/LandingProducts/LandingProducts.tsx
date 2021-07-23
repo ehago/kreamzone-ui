@@ -33,7 +33,7 @@ function LandingProducts({ title, subTitle, isLoading, noRepresentation = false,
       <div className="product-list-wrapper">
         <ul className="product-list">
           {
-            !isLoading ? <Loader /> : visibleProducts.map((product) => <LandingProduct key={product.item_id} product={product} />) //
+            isLoading ? <Loader /> : visibleProducts.map((product) => <LandingProduct key={product.item_id} product={product} />) //
           }
         </ul>
         {

@@ -3,6 +3,7 @@ import { IDropped } from '@libs/apis/landing';
 import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import LandingProduct from './LandingProduct';
+import Loader from './Loader';
 import RepresentationImage from './RepresentationImage';
 
 interface IProps {
@@ -32,9 +33,7 @@ function LandingProducts({ title, subTitle, isLoading, noRepresentation = false,
       <div className="product-list-wrapper">
         <ul className="product-list">
           {
-            visibleProducts.map((product) => (
-              <LandingProduct key={product.item_id} product={product} />
-            )) //
+            !isLoading ? <Loader /> : visibleProducts.map((product) => <LandingProduct key={product.item_id} product={product} />) //
           }
         </ul>
         {

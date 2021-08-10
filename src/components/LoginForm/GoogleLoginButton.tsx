@@ -30,6 +30,13 @@ const StyledGoogleLoginButton = styled.button`
   border-radius: 12px;
   border: none;
   outline: none;
+  transition: 0.15s all ease-out;
+  &:hover {
+    background: #e07b74;
+  }
+  &:disabled {
+    pointer-events: none;
+  }
 
   svg {
     position: absolute;

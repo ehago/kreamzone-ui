@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import AppIcon from '@components/AppIcon';
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
@@ -63,6 +64,10 @@ function Banner({}: IProps) {
     setCursor(cursor);
   }, []);
 
+  const onClickBanner = (url: string) => {
+    // history.push(url);
+  };
+
   // 5초에 한 번씩 배너이미지 변경
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -79,7 +84,7 @@ function Banner({}: IProps) {
         <div className="banner-image-list">
           {
             banners.map((banner, i) => (
-              <img key={i} className={cn('banner-image', { active: cursor === i })} src={banner.image} alt="배너 이미지" onClick={() => history.push(banner.to)} />
+              <img key={i} className={cn('banner-image', { active: cursor === i })} src={banner.image} alt="배너 이미지" onClick={() => onClickBanner(banner.to)} />
             )) //
           }
         </div>

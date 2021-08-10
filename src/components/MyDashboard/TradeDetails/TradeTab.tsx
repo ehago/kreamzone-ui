@@ -13,15 +13,15 @@ interface IProps {
 }
 
 function TradeTab({ to, total, text, count }: IProps) {
-  const type = useContext(TradeTypeContext);
+  const { type, isLoading } = useContext(TradeTypeContext);
 
   return (
-    <StyledTradeTab>
+    <StyledTradeTab disabled={isLoading}>
       <Link to={to}>
         <dl>
           <StyledText>{text}</StyledText>
           <StyledCount type={type} className={cn({ total })}>
-            {count}
+            {isLoading ? <Skeleton /> : count}
           </StyledCount>
         </dl>
       </Link>
@@ -29,13 +29,12 @@ function TradeTab({ to, total, text, count }: IProps) {
   );
 }
 
-const StyledTradeTab = styled.div`
+const StyledTradeTab = styled.div<{ disabled: boolean }>`
   display: table-cell;
   text-align: center;
   transition: 0.15s background linear;
-
   &:hover {
-    background: #f1f1f1;
+    background: ${(props) => (props.disabled ? 'inherit' : '#f1f1f1')};
   }
 
   a {
@@ -43,6 +42,7 @@ const StyledTradeTab = styled.div`
     display: block;
     padding-top: 18px;
     height: 96px;
+    pointer-events: ${(props) => (props.disabled ? 'none' : 'auto')};
   }
 `;
 
@@ -60,6 +60,14 @@ const StyledCount = styled.dd<{ type: TradeType }>`
   &.total {
     color: ${(props) => (props.type === 'buying' ? '#f15746' : '#31b46e')};
   }
+`;
+
+const Skeleton = styled.div`
+  margin: 0.5rem auto 0;
+  width: 40px;
+  height: 20px;
+  border-radius: 3px;
+  background: #ebebeb;
 `;
 
 export default TradeTab;

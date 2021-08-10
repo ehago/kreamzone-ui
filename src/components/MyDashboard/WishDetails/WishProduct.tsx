@@ -1,10 +1,11 @@
+import { IDropped } from '@libs/apis/landing';
+import { toPriceFormat } from '@libs/utils/format';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import WishButton from './WishButton';
-import { IProduct } from './__data__/products';
 
 interface IProps {
-  product: IProduct;
+  product: IDropped;
 }
 
 function WishProduct({ product }: IProps) {
@@ -13,21 +14,21 @@ function WishProduct({ product }: IProps) {
       <Link to="qwd" className="wish-product-inner">
         <div className="image-wrapper">
           <img
-            src={product.productImage}
-            alt={product.desc} //
+            src={product.image}
+            alt={'상품 이미지'} //
           />
         </div>
         <div className="info-box">
           <div className="brand">
             <img
-              src={product.brandImage}
-              alt={product.brand} //
+              src={product.brand.image}
+              alt={'브랜드 이미지'} //
             />
           </div>
-          <p className="name">{product.name}</p>
+          <p className="name">{product.eng_name}</p>
           <div className="price">
             <div className="amount">
-              <em className="num">{product.price}</em>
+              <em className="num">{toPriceFormat(product.immediately_purchase_price)}</em>
               <span className="won lg">원</span>
             </div>
             <div className="desc">

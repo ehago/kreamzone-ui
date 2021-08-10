@@ -1,6 +1,9 @@
 import AppIcon from '@components/AppIcon';
+import { ITradeDetail } from '@libs/apis/my';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Loader from './Loader';
+import TradeDetailItem from './TradeDetailItem';
 import TradeEmptySet from './TradeEmptySet';
 import TradeTab from './TradeTab';
 import TradeTabs from './TradeTabs';
@@ -9,11 +12,14 @@ export type TradeType = 'buying' | 'selling';
 
 interface IProps {
   type: TradeType;
+  isLoading: boolean;
+  tradeList: ITradeDetail[] | undefined;
 }
 
-function TradeDetails({ type }: IProps) {
+function TradeDetails({ type, isLoading, tradeList }: IProps) {
   const title = type === 'buying' ? '구매 내역' : '판매 내역';
   const baseLink = type === 'buying' ? '/my/buying' : '/my/selling';
+  const isEmpty = !tradeList || tradeList.length === 0;
 
   return (
     <StyledTradeDetails>
@@ -25,7 +31,7 @@ function TradeDetails({ type }: IProps) {
         </Link>
       </HeaderSection>
       <ContentSection>
-        <TradeTabs type={type}>
+        <TradeTabs type={type} isLoading={isLoading}>
           <TradeTab to={`${baseLink}`} text="전체" count={0} total />
           <TradeTab to={`${baseLink}?tab=bidding`} text="입찰 중" count={0} />
           <TradeTab to={`${baseLink}?tab=pending`} text="진행 중" count={0} />
@@ -33,7 +39,15 @@ function TradeDetails({ type }: IProps) {
         </TradeTabs>
         <div>
           <div>
-            <TradeEmptySet />
+            {
+              isLoading ? (
+                <Loader />
+              ) : isEmpty ? (
+                <TradeEmptySet />
+              ) : tradeList ? (
+                tradeList.slice(0, 3).map((item, index) => <TradeDetailItem key={index} />) //
+              ) : null //
+            }
           </div>
         </div>
       </ContentSection>

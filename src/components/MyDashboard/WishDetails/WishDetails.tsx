@@ -1,10 +1,14 @@
+import { IDropped } from '@libs/apis/landing';
 import styled from 'styled-components';
 import WishProduct from './WishProduct';
-import products from './__data__/products';
+import Loader from './Loader';
 
-interface IProps {}
+interface IProps {
+  isLoading: boolean;
+  wishList: IDropped[] | undefined; // 임시
+}
 
-function WishDetails({}: IProps) {
+function WishDetails({ isLoading, wishList }: IProps) {
   return (
     <StyledWishDetails>
       <HeaderSection>
@@ -13,9 +17,16 @@ function WishDetails({}: IProps) {
       <ContentSection>
         <div>
           {
-            products.map((product) => (
-              <WishProduct key={product.id} product={product} />
-            )) //
+            isLoading ? (
+              <Loader />
+            ) : (
+              wishList?.slice(0, 4).map((product) => (
+                <WishProduct
+                  key={product.item_id}
+                  product={product} //
+                />
+              ))
+            ) //
           }
         </div>
       </ContentSection>

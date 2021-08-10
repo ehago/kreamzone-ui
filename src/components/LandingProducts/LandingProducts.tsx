@@ -17,7 +17,7 @@ interface IProps {
 function LandingProducts({ title, subTitle, isLoading, noRepresentation = false, products }: IProps) {
   const [viewLimit, setViewLimit] = useState(4); // 최초에는 최대 4개의 제품만 보여줌
 
-  const onMore = () => {
+  const onShowMore = () => {
     setViewLimit((viewLimit) => viewLimit + 4);
   };
 
@@ -39,7 +39,7 @@ function LandingProducts({ title, subTitle, isLoading, noRepresentation = false,
         {
           isMore && (
             <div className="more-button-wrapper">
-              <button onClick={onMore}>더보기</button>
+              <button onClick={onShowMore}>더보기</button>
             </div>
           ) //
         }

@@ -4,21 +4,21 @@ import styled from 'styled-components';
 interface IProps {
   disabled?: boolean;
   onClick: () => void;
-  children: string;
 }
 
-function NaverLoginButton({ disabled = false, onClick, children }: IProps) {
+function GoogleLoginButton({ disabled = false, onClick }: IProps) {
   return (
-    <StyledNaverLoginButton disabled={disabled} onClick={onClick}>
-      <AppIcon type="naver" />
-      {children}
-    </StyledNaverLoginButton>
+    <StyledGoogleLoginButton disabled={disabled} onClick={onClick}>
+      {/* <AppIcon type="naver" /> */}
+      <AppIcon type="googleLogin" />
+      구글 로그인
+    </StyledGoogleLoginButton>
   );
 }
 
-const StyledNaverLoginButton = styled.button`
+const StyledGoogleLoginButton = styled.button`
   position: relative;
-  background-color: #5ac451;
+  background-color: #d85147;
   color: #fff;
   cursor: pointer;
   width: 100%;
@@ -33,13 +33,13 @@ const StyledNaverLoginButton = styled.button`
 
   svg {
     position: absolute;
-    width: 20px;
-    height: 18px;
+    width: 35px;
+    height: 35px;
     top: 50%;
-    margin-top: -9px;
+    margin-top: -18px;
     left: 18px;
     fill: white;
   }
 `;
 
-export default NaverLoginButton;
+export default GoogleLoginButton;

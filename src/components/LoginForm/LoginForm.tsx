@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import InputBox from './InputBox';
 import LoginButton from './LoginButton';
-import NaverLoginButton from './NaverLoginButton';
+import GoogleLoginButton from './GoogleLoginButton';
 
 interface IProps {}
 
@@ -20,9 +20,7 @@ function LoginForm({}: IProps) {
           >
             로그인
           </LoginButton>
-          <NaverLoginButton disabled={false} onClick={() => console.log('clicked')}>
-            네이버 로그인
-          </NaverLoginButton>
+          <GoogleLoginButton disabled={false} onClick={() => console.log('clicked')} />
         </div>
         <ul className="account-find-list">
           <li className="account-find-item">
